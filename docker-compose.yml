@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  job-queue:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8090:8090"
+    command: ["-port", ":8090", "-workers", "4"]
